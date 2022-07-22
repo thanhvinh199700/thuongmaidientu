@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"> </script>
+    <title>Đăng ký</title>
+    <style>
+        
+        body {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+  
+    background: #ffffff;
+  }
+  .container {
+    width: 100%;
+    margin: auto;
+  }
+
+    #header-search {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    background: white;
+  }
+  .logo-homepage a img {
+    position: absolute;
+    width: 146px;
+    height: 100px;
+    left: 66px;
+    top: 0px;
+  }
+  .search-bar input {
+    position: absolute;
+    width: 600px;
+    height: 38px;
+    left: 286px;
+    top: 31px;
+    border: 3px solid black;
+    font-weight: bold;
+
+    background: #fefefe;
+  }
+  .search-button button {
+    position: absolute;
+    width: 112px;
+    height: 38px;
+    left: 890px;
+    top: 31px;
+    color: #e3e3e3;
+    background: #000000;
+    border:3px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  .search-button button:hover {
+    background: #0651a7;
+  }
+  .search-logo img {
+    position: absolute;
+    width: 37px;
+    height: 74px;
+    left: 849px;
+    top: 13px;
+  }
+  .search-infomation a img {
+    position: absolute;
+    width: 84px;
+    height: 74px;
+    left: 1044px;
+    top: 13px;
+    
+  }
+  .search-infomation p {
+    /* Tài khoản */
+  
+    position: absolute;
+    width: 59px;
+    height: 15px;
+    left: 1113px;
+    top: 42px;
+  
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13.5px;
+    line-height: 15px;
+    /* identical to box height */
+  
+    color: black;
+  }
+  
+  .search-cart a img {
+    position: absolute;
+    width: 117px;
+    height: 100px;
+    left: 1190px;
+    top: 0px;
+  }
+  .search-cart p {
+    position: absolute;
+    width: 55px;
+    height: 15px;
+    left: 1280px;
+    top: 42px;
+  
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13.5px;
+    line-height: 15px;
+    /* identical to box height */
+  
+    color: black;
+  }
+  #nav-menu {
+    width: 100%;
+    height: 50px;
+  
+    position: flex;
+    background: #fffafa;
+  }
+  #nav-menu ul li {
+    flex-flow: row nowrap;
+    align-self: center;
+    width: 6%;
+    float: left;
+    margin-left: 120px ;
+    list-style: none;
+    text-align: center;
+    
+  }
+  #nav-menu ul li a {
+    text-decoration: none;
+  
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 50px;
+    font-weight: bolder;
+    /* identical to box height */
+  
+    color: #000000;
+  }
+  #nav-menu ul li:hover a {
+    color: #00b8f1;
+    text-decoration: underline;
+  }
+
+        #form1 {
+            border-radius: 10px;
+            width: 415px;
+            margin: auto;
+            padding: 10px 40px;
+            background: whitesmoke;
+            border: 1px solid black;
+        }
+
+        #form1 .txt {
+            width: 400px;
+            padding: 6px;
+            border: 1px solid lightslategray;
+        }
+
+        #form1 fieldset {
+            border: 1px solid rgb(74, 137, 200);
+            margin-top: 0px;
+        }
+
+        .button{
+           margin-left: 50px;
+          
+            width: 315px;
+            height: 50px;
+            border-radius: 3px;
+            background-color: #000000;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        #form1 #baoloi {
+            margin: 0px auto;
+            color: red;
+        }
+
+
+        #form1 #baoloi {
+            margin: 0px auto;
+            color: red;
+        }
+
+        #form1 .loi {
+           color: rgb(234, 10, 10);
+         
+        }
+        footer{
+    position: relative;
+    width: 1518px;
+    height: auto;
+    padding: 50px 100px;
+    background: #111;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+footer .container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+footer .container .noi-dung{
+    margin-right: 10px;
+}
+footer  .container .noi-dung.about{
+    width:40%;
+    
+}
+footer .container .noi-dung.about h2{
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+footer .container .noi-dung.about h2:before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #f00;
+}
+footer .container .noi-dung.about p{
+    color: #999;
+}
+.links h2{
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.links h2::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #f00;
+}
+.links{
+   position: relative;
+   width: 25%;
+}
+.links ul li{
+    list-style: none;
+}
+.links ul li a{
+    color: #999;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+.links ul li a:hover{
+    color: #fff;
+}
+.contact h2{
+    position: relative;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.contact h2::before{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #f00;
+}
+.contact{
+    width: calc(35% - 60px);
+    margin-right: 0 !important;
+}
+.contact .info{
+    position: relative;
+}
+.contact .info li{
+    display: flex;
+    margin-bottom: 16px;
+}
+.contact .info li span:nth-child(1) {
+    color: #fff;
+    font-size: 20px;
+    margin-right: 10px;
+}
+.contact .info li span{
+    color: #999;
+}
+.contact .info li a{
+    color: #999;
+    text-decoration: none;
+}
+    </style>
+</head>
+
+<body ng-app="b4" ng-controller="ctr1">
+    <header id="header-search">
+        <div class="logo-homepage">
+            <a href="/trangchu-1.html"><img src="/img/logochinh.png" alt=""></a>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Mời nhập sản phẩm cần tìm">
+        </div>
+
+        <div class="search-button">
+            <div class="search-logo">
+                <img src="img/Untitled design (8).png" alt="">
+            </div>
+            <button>Tìm kiếm</button>
+        </div>
+
+        <div class="search-infomation">
+            <a href="/dangki.html">
+                <img src="img/Untitled design (4).png" alt="Thong tin">
+                <p>Tài khoản</p>
+            </a>
+        </div>
+
+        <div class="search-cart">
+            <a href="/giohang.html"><img src="img/Untitled design (5).png" alt="">
+                <p>Giỏ hàng</p>
+            </a>
+        </div>
+    </header>
+
+    <h2 style="text-align: center;">TRỞ THÀNH THÀNH VIÊN CỦA SHOPEE</h2>
+    <form name="form1" action="" id="form1">
+        
+        
+        <p>
+            <label for="">Họ và tên</label><br>
+            <input required minlength="2" maxlength="30" ng-model="hoten" name="hoten" type="text" id="hoten" class="txt">
+            <em ng-if="form1.hoten.$invalid" class="loi">Nhập họ tên từ 2 đến 30 ký tự</em>
+        </p>
+        <p>
+            <label for="">Email</label><br>
+            <input ng-model="email" type="email" name="email" id="email" class="txt">
+            <em ng-if="form1.email.$invalid    " class="loi">Nhập đúng gmail</em>
+        </p>
+        <p>
+            <label for="">Tên đăng nhập</label>
+            <input required minlength="2" maxlength="30" ng-model="tendangnhap" name="tendangnhap" type="text" id="hoten" class="txt">
+            <em ng-if="form1.tendangnhap.$invalid" class="loi">Nhập tên đăng nhập</em>
+        </p>
+        <p>
+            <label for="">Mật khẩu</label>
+            <input required minlength="2" maxlength="30" ng-model="Matkhau" name="matkhau" type="text" id="hoten" class="txt">
+            <em ng-if="form1.matkhau.$invalid" class="loi">Xin mời nhập mật khẩu</em>
+        </p>
+        <p>
+            <label for="">Nhập lại mật khẩu</label>
+            <input required minlength="2" maxlength="30" ng-model="nlmk" name="nlmk" type="text" id="hoten" class="txt">
+            <em ng-if="form1.nlmk.$invalid" class="loi">Xin mời nhập lại mật khẩu</em>
+        </p>
+        <p>
+        <fieldset id="fs1">
+            <legend>Giới tính</legend>
+            <input ng-model="gioitinh" type="radio" name="gioitinh" value="1"><label for="">Nam</label>
+            <input ng-model="gioitinh" type="radio" name="gioitinh" value="2"><label for="">Nữ</label><br>
+            <em ng-if="!gioitinh>=1" class="loi">Chọn Giới tính</em>
+        </fieldset>
+        </p>
+       
+        <p>
+            <label for="">Quốc tịch</label><br>
+            <select ng-model="qt" name="quoctich" id="quoctich" class="txt">
+                <option value="0">Chọn quốc tịch</option>
+                <option value="1">Usa</option>
+                <option value="2">Việt Nam</option>
+                <option value="3">Trung Quốc</option>
+                <option value="4">Anh</option>
+                <option value="5">Nhật Bản</option>
+            </select>
+            <em ng-if="!qt || qt==0" class="loi">Chọn quốc tịch</em>
+        </p>
+        
+        <div name="baoloi" id="baoloi">
+
+        </div>
+        <button class="button"  ng-model="button" >Đăng ký</button>
+        <br>
+      <em class="loi" ng-if="(!form1.masv.$invalid) && (!form1.hoten.$invalid) && (!form1.email.$invalid ) && (gioitinh>=1) && (st1 ||st2 ||st3 || st4 || st5) && (qt>0) && (ghichu)">Nhập đúng</em>
+
+    </form>
+    <footer>
+    <div class="container">
+        <div class="noi-dung about">
+            <h2>Về Chúng Tôi</h2>
+            <p>Shopee là một tập đoàn đa quốc gia của Mỹ hoạt động trong lĩnh vực thiết kế, phát triển, sản xuất, quảng bá cũng như kinh doanh các mặt hàng giày dép, quần áo, phụ kiện, trang thiết bị và dịch vụ liên quan đến thể thao.</p>
+            
+        </div>
+        <div class="noi-dung links">
+            <h2>Đường Dẫn</h2>
+            <ul>
+                <li><a href="#">Trang Chủ</a></li>
+                <li><a href="#">Về Chúng Tôi</a></li>
+                <li><a href="#">Thông Tin Liên Lạc</a></li>
+                <li><a href="#">Dịch Vụ</a></li>
+                <li><a href="#">Điều Kiện Chính Sách</a></li>
+            </ul>
+        </div>
+        <!--Kết Thúc Nội Dung Đường Dẫn-->
+        <!--Bắt Đâu Nội Dung Liên Hệ-->
+        <div class="noi-dung contact">
+            <h2>Thông Tin Liên Hệ</h2>
+            <ul class="info">
+                <li>
+                    <span><i class="fa fa-map-marker"></i></span>
+                    <span>Đường Số 1<br />
+                        Quận 1, Thành Phố Hồ Chí Minh<br />
+                        Việt Nam</span>
+                </li>
+                <li>
+                    <span><i class="fa fa-phone"></i></span>
+                    <p><a href="#">+84 123 456 789</a>
+                        <br />
+                        <a href="#">+84 987 654 321</a></p>
+                </li>
+                <li>
+                    <span><i class="fa fa-envelope"></i></span>
+                    <p><a href="#">diachiemail@gmail.com</a></p>
+               </li>
+                <li>
+                    <form class="form">
+                        <input type="email" class="form__field" placeholder="Đăng Ký Subscribe Email" />
+                        <button type="button" class="btn btn--primary  uppercase">Gửi</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+        <!--Kết Thúc Nội Dung Liên Hệ-->
+        
+    </div>
+    
+</footer>
+</body>
+
+</html>
+<script>
+     app = angular.module("b4", []);
+    app.controller("ctr1", xuly);
+    function xuly($scope) {
+
+    }
+    
+</script>
